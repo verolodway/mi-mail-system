@@ -26,6 +26,7 @@ public class MailClient
      */
     public MailClient(MailServer server, String user)
     {
+        this.server = new MailServer();
         this.server = server;
         this.user = user;
     }
@@ -42,9 +43,9 @@ public class MailClient
     public void printNextMailItem()
     {
         MailItem nuevoMensaje = server.getNextMailItem(user);
-        if (newMailItem == true)
+        if (nuevoMensaje != null)
         {
-            System.out.println(nuevoMensaje);
+            nuevoMensaje.print();
         }
         else
         {

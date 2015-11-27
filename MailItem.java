@@ -13,15 +13,18 @@ public class MailItem
     private String to;
     //Variable que representa el mensaje
     private String message;
+    //Variable que representa el asunto
+    private String subject;
 
     /**
      * Constructor que permite crear un objeto MailItem inicializando sus atributos por medio de parámetros.
      */
-    public MailItem(String from, String to, String message)
+    public MailItem(String from, String to, String message, String subject)
     {
         this.from = from;
         this.to = to;
         this.message = message;
+        this.subject = subject;
     }
 
     /**
@@ -49,10 +52,18 @@ public class MailItem
     }
     
     /**
+     * Método getter que nos devuelve el asunto
+     */
+    public String getSubject()
+    {
+        return subject;
+    }
+    
+    /**
      * Método que nos muestra por pantalla los atributos de MailItem
      */
     public void print()
     {
-        System.out.println("from: " + from + " " + "to: " + to + " " + "message: " + message);
+        System.out.println("from: " + from + " " + "to: " + to + " " + "subject: " + subject + " " + "message: " + message);
     }
 }

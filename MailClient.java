@@ -19,7 +19,8 @@ public class MailClient
      private String destinatario;
     //Variable que representa el mensaje enviado
      private String mensaje;
-
+    //Variable que representa el asunto del mensaje enviado
+     private String asunto;
     /**
      * Constructor que que permita crear un objeto MailClient inicializando sus atributos por medio de parámetros.
      */
@@ -27,7 +28,6 @@ public class MailClient
     {
         this.server = server;
         this.user = user;
-        
     }
 
     public MailItem getNextMailItem()
@@ -55,9 +55,9 @@ public class MailClient
     /**
      * Método que envía el mensaje
      */
-    public void sendMailItem(String destinatarioX, String mensajeEnv)
+    public void sendMailItem(String destinatarioX, String mensajeEnv, String asunto)
     {
-        MailItem nuevoMensaje = new MailItem(user, destinatarioX, mensajeEnv);
+        MailItem nuevoMensaje = new MailItem(user, destinatarioX, mensajeEnv, asunto);
         server.post(nuevoMensaje);
     }
 }

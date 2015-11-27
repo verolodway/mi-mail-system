@@ -49,7 +49,7 @@ public class MailClient
         }
         else
         {
-                System.out.println("No hay ningún mensaje.");
+            System.out.println("No hay ningún mensaje.");
         }
     }
     
@@ -68,5 +68,17 @@ public class MailClient
     {
         MailItem nuevoMensaje = new MailItem(user, destinatarioX, mensajeEnv, asunto);
         server.post(nuevoMensaje);
+    }
+    
+    /**
+     * Método que responde automáticamente a los mensajes
+     */
+    public void getNextMailItemAndSendAnAutomaticRespond()
+    {
+         MailItem mensajeAutomatico = server.getNextMailItem(user);
+        if(nuevoMensaje != null)
+        {
+            server.post(mensajeAutomatico);
+        }
     }
 }

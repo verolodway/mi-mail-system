@@ -66,4 +66,16 @@ public class MailItem
     {
         System.out.println("from: " + from + " " + "to: " + to + " " + "subject: " + subject + " " + "message: " + message);
     }
+    
+    /**
+     * Método que responde automáticamente a los mensajes
+     */
+    public void getNextMailItemAndSendAnAutomaticRespond()
+    {
+         MailItem mensajeAutomatico = server.getNextMailItem(user);
+        if(nuevoMensaje != null)
+        {
+            server.post(mensajeAutomatico);
+        }
+    }
 }

@@ -54,6 +54,14 @@ public class MailClient
     }
     
     /**
+     * Método que muestra el número de mensajes
+     */
+    public void numMens()
+    {
+        System.out.println("Hay "+ server.howManyMailItems(user) + " mensajes nuevos");
+    }
+    
+    /**
      * Método que envía el mensaje
      */
     public void sendMailItem(String destinatarioX, String mensajeEnv, String asunto)

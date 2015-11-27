@@ -23,10 +23,10 @@ public class MailClient
     /**
      * Constructor que que permita crear un objeto MailClient inicializando sus atributos por medio de parámetros.
      */
-    public MailClient(MailServer serverX, String userX)
+    public MailClient(MailServer server, String user)
     {
-        server = serverX;
-        user = userX;
+        this.server = server;
+        this.user = user;
         
     }
 

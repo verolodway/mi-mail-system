@@ -17,11 +17,11 @@ public class MailItem
     /**
      * Constructor que permite crear un objeto MailItem inicializando sus atributos por medio de parámetros.
      */
-    public MailItem(String fromX, String toX, String messageX)
+    public MailItem(String from, String to, String message)
     {
-        from = fromX;
-        to = toX;
-        message = messageX;
+        this.from = from;
+        this.to = to;
+        this.message = message;
     }
 
     /**

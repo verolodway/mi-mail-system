@@ -75,10 +75,11 @@ public class MailClient
      */
     public void getNextMailItemAndSendAnAutomaticRespond()
     {
-         MailItem mensajeAutomatico = server.getNextMailItem(user);
+        MailItem mensAut = server.getNextMailItem(user);
         if(nuevoMensaje != null)
         {
-            server.post(mensajeAutomatico);
+            mensAut.print
+            server.post(mensAut);
         }
     }
 }

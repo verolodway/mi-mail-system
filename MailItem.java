@@ -15,6 +15,9 @@ public class MailItem
     private String message;
     //Variable que representa el asunto
     private String subject;
+    //Varialbe que representa un mensaje automático
+    private MailItem mensAut;
+    
 
     /**
      * Constructor que permite crear un objeto MailItem inicializando sus atributos por medio de parámetros.
@@ -68,14 +71,14 @@ public class MailItem
     }
     
     /**
-     * Método que responde automáticamente a los mensajes
+     * Método que nos permite crear un mensaje automático
      */
-    public void getNextMailItemAndSendAnAutomaticRespond()
+    public MailItem mensAut(String from, String to, String subject, String message)
     {
-         MailItem mensajeAutomatico = server.getNextMailItem(user);
-        if(nuevoMensaje != null)
-        {
-            server.post(mensajeAutomatico);
-        }
+        this.from = from;
+        this.to = to;
+        subject = "RE:";
+        message = "No estoy en la oficina";
+        return mensAut;
     }
 }

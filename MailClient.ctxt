@@ -14,6 +14,6 @@ comment4.params=destinatarioX\ mensajeEnv\ asunto
 comment4.target=void\ sendMailItem(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment4.text=\r\n\ M\u00E9todo\ que\ env\u00EDa\ el\ mensaje\r\n
 comment5.params=
-comment5.target=void\ getNextMailItemAndSendAnAutomaticRespond()
+comment5.target=void\ getNextMailItemAndSendAutomaticRespond()
 comment5.text=\r\n\ M\u00E9todo\ que\ responde\ autom\u00E1ticamente\ a\ los\ mensajes\r\n
 numComments=6

@@ -41,15 +41,15 @@ public class MailClient
 
     public MailItem getNextMailItem()
     {    MailItem mens = server.getNextMailItem(user);
-        if (mensaje.contains("promoción"))
+        if (mens.getMessage().contains("promoción"))
         {
            return null;
         }
-         else if (mensaje.contains("regalo"))
+         else if (mens.getMessage().contains("regalo"))
         {
             return null;
         }
-        else if (mensaje.contains("trabajo"))
+        else if (mens.getMessage().contains("trabajo"))
         {
            return server.getNextMailItem(user);
         }
@@ -71,12 +71,11 @@ public class MailClient
         {
             System.out.println("No hay ningún mensaje.");
         }
-        MailItem mens = server.getNextMailItem(user);
-        if (mensaje.contains("promoción"))
+        if (nuevoMensaje.getMessage().contains("promoción"))
         {
             System.out.println("Se ha recibido spam.");
         }
-        else if (mensaje.contains("regalo"))
+        else if (nuevoMensaje.getMessage().contains("regalo"))
         {
             System.out.println("Se ha recibido spam.");
         }

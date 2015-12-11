@@ -21,6 +21,14 @@ public class MailClient
     private String mensaje;
     //Variable que representa el asunto del mensaje enviado
     private String asunto;
+    //Variable que representa los mensajes recibidos
+    private int recibidos;
+    //Variable que representa los mensajes enviados
+    private int enviados;
+    //Variable que representa los mensajes tipo spam
+    private int spam;
+    //Variable que representa el porcentaje de spam
+    private float porcentajeSpam;
     /**
      * Constructor que que permita crear un objeto MailClient inicializando sus atributos por medio de parámetros.
      */
@@ -111,7 +119,35 @@ public class MailClient
             email = null;
         }
     }
+    
+    public static void main(String[] args) { 
+         String h = "número de caracteres";  
+        } 
 
+    static int contarCaracteres(String mensaje){ 
+       return mensaje.length(); 
+    }
+    
+    /**
+     * Método que le permite al cliente mostrar por pantalla unas estadísticas que incluyan el número de mensajes enviados, recibidos, 
+     * spam, porcentaje de spam y la persona que nos envió el mensaje más largo junto con cuántos caracteres tenía ese mensaje
+     */
+    public void showStats()
+    {   recibidos = recibidos + 1;
+        System.out.println("Has recibido " + recibidos + " mensajes");
+        enviados = enviados + 1;
+        System.out.println("Has enviado " + enviados + " mensajes");
+        spam = spam + 1;
+        porcentajeSpam = (recibidos * spam)/100;
+        System.out.println("Has recibido " + porcentajeSpam + "%" + " de spam");
+        MailItem email = getNextMailItem();
+        String h = "número de caracteres";
+        if(mensaje.length() < mensaje.length())
+        {
+            System.out.println("El mensaje de :" + email.getFrom() + " tiene: " + contarCaracteres(h) + "caracteres");
+        }
+    }
+    
     public class Test
     {
         /** 

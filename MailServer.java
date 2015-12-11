@@ -38,6 +38,8 @@ public class MailServer
         }
         return count;
     }
+    
+    
 
     /**
      * Return the next mail item for a user or null if there

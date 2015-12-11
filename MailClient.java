@@ -40,7 +40,8 @@ public class MailClient
     }
 
     public MailItem getNextMailItem()
-    {   if (mensaje.contains("propaganda"))
+    {    MailItem mens = server.getNextMailItem(user);
+        if (mensaje.contains("promoción"))
         {
            return null;
         }
@@ -70,7 +71,7 @@ public class MailClient
         {
             System.out.println("No hay ningún mensaje.");
         }
-        
+        MailItem mens = server.getNextMailItem(user);
         if (mensaje.contains("promoción"))
         {
             System.out.println("Se ha recibido spam.");
@@ -146,6 +147,37 @@ public class MailClient
         {
             System.out.println("El mensaje de :" + email.getFrom() + " tiene: " + contarCaracteres(h) + "caracteres");
         }
+    }
+    
+    public MailItem showInfoLastSpam()
+    {
+        if (mensaje.contains("propaganda"))
+        {
+           return server.getNextMailItem(user);
+        }
+         else if (mensaje.contains("regalo"))
+        {
+            return server.getNextMailItem(user);
+        }
+        else
+        {
+            System.out.println("No ha llegado aún spam");
+        }
+        return server.getNextMailItem(user);
+    }
+    
+    public void sendMailItemWithTransmissionError(String user, String destinatarioY, String mensajeErr, String asunt)
+    {
+        MailItem nuevoMensaje = new MailItem(user, destinatarioY, mensajeErr, asunt);
+        if (mensajeErr.contains("o"))
+        {
+            System.out.println("#o");
+        }
+        else if (mensajeErr.contains("i"))
+        {
+            System.out.println("$i");
+        }
+        server.post(nuevoMensaje);
     }
     
     public class Test
